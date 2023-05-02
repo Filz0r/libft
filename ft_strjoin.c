@@ -6,7 +6,7 @@
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:01:15 by fparreir          #+#    #+#             */
-/*   Updated: 2023/04/24 15:50:59 by fparreir         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:57:33 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,16 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	char	*buffer;
 	size_t	total_len;
 	size_t	i;
-	size_t	len1;
 
 	i = 0;
-	len1 = ft_strlen(s1);
-	total_len = len1 + ft_strlen(s2) + 1;
+	total_len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	buffer = (char *)malloc(total_len * sizeof(char));
 	if (!buffer)
 		return (0);
-	while (i < len1)
+	while (*s1)
 		buffer[i++] = *s1++;
-	while (i <= total_len)
+	while (*s2)
 		buffer[i++] = *s2++;
-	buffer[i] = '\0';
+	buffer[i] = 0;
 	return (buffer);
 }
