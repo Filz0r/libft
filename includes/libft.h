@@ -6,7 +6,7 @@
 /*   By: fparreir <fparreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 15:53:22 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/23 11:38:40 by fparreir         ###   ########.fr       */
+/*   Updated: 2023/05/23 12:28:32 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include <stdarg.h>
+# include <stdlib.h>
+# include <limits.h> 
 
 # define MIN_INT -2147483648 
 # define MAX_INT 2147483647 
@@ -28,5 +33,6 @@
 # include "../src/numbers/ft_numbers.h" 
 # include "../src/string/ft_string.h" 
 # include "../src/printf/ft_printf.h"
+# include "../src/gnl/get_next_line.h"
 
 #endif
