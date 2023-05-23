@@ -6,7 +6,7 @@
 /*   By: fparreir <fparreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:37:37 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/16 15:20:37 by fparreir         ###   ########.fr       */
+/*   Updated: 2023/05/23 14:15:57 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_get_line(char *buffer)
 	int		i;
 
 	i = 0;
-	if (!ft_strlen(buffer))
+	if (!ft_strlenc(buffer))
 		return (NULL);
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
@@ -71,7 +71,7 @@ char	*ft_get_buffer(char *buffer, int fd)
 	if (!temp)
 		return (NULL);
 	b = 1;
-	while (!(ft_strchr(buffer, '\n')) && b != 0)
+	while (!(ft_strchrc(buffer, '\n')) && b != 0)
 	{
 		b = read(fd, temp, BUFFER_SIZE);
 		if (b == -1)
@@ -81,7 +81,7 @@ char	*ft_get_buffer(char *buffer, int fd)
 			return (NULL);
 		}
 		temp[b] = '\0';
-		buffer = ft_strjoin(buffer, temp);
+		buffer = ft_strjoinc(buffer, temp);
 	}
 	free(temp);
 	return (buffer);
