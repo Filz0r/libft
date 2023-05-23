@@ -6,7 +6,7 @@
 #    By: fparreir <fparreir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 15:45:36 by fparreir          #+#    #+#              #
-#    Updated: 2023/05/23 11:40:55 by fparreir         ###   ########.fr        #
+#    Updated: 2023/05/23 12:33:42 by fparreir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ MEM		= $(SRC)memory/
 NUM		= $(SRC)numbers/
 STR		= $(SRC)string/
 PRINTF	= $(SRC)printf/
+GNL		= $(SRC)gnl/
 
 SRC_CHAR = $(CHAR)ft_isalnum.c $(CHAR)ft_isalpha.c $(CHAR)ft_isascii.c $(CHAR)ft_isdigit.c \
 	   $(CHAR)ft_isprint.c $(CHAR)ft_toupper.c $(CHAR)ft_tolower.c
@@ -42,16 +43,18 @@ SRC_STR = $(STR)ft_bzero.c $(STR)ft_split.c $(STR)ft_strchr.c $(STR)ft_strdup.c 
 	  $(STR)ft_strlen.c $(STR)ft_strmapi.c $(STR)ft_strncmp.c $(STR)ft_strnstr.c \
 	  $(STR)ft_strrchr.c $(STR)ft_strtrim.c $(STR)ft_substr.c
 SRC_PRINTF = $(PRINTF)ft_printf.c $(PRINTF)put_utils.c $(PRINTF)utils.c 
+SRC_GNL = $(GNL)get_next_line.c $(GNL)get_next_line_utils.c
 
 SOURCES = $(SRC_CHAR) $(SRC_FD) $(SRC_LISTS) $(SRC_MEM) $(SRC_NUM) $(SRC_STR) \
-			$(SRC_PRINTF)
+			$(SRC_PRINTF) $(SRC_GNL)
 OBJECTS = $(subst $(CHAR),$(OBJDIR),$(SRC_CHAR:.c=.o)) \
 	$(subst $(FD),$(OBJDIR),$(SRC_FD:.c=.o)) \
 	$(subst $(LISTS),$(OBJDIR),$(SRC_LISTS:.c=.o)) \
 	$(subst $(MEM),$(OBJDIR),$(SRC_MEM:.c=.o)) \
 	$(subst $(NUM),$(OBJDIR),$(SRC_NUM:.c=.o)) \
 	$(subst $(STR),$(OBJDIR),$(SRC_STR:.c=.o)) \
-	$(subst $(PRINTF),$(OBJDIR),$(SRC_PRINTF:.c=.o))
+	$(subst $(PRINTF),$(OBJDIR),$(SRC_PRINTF:.c=.o)) \
+	$(subst $(GNL),$(OBJDIR),$(SRC_GNL:.c=.o))
 
 all: $(NAME)
 
@@ -63,9 +66,10 @@ $(NAME): $(OBJDIR) $(OBJECTS)
 $(OBJDIR):
 	mkdir $(OBJDIR)
 
-$(OBJECTS): $(SOURCES)
-	@echo "compiling $@" 
-	@$(CC) -o $@ $< -c $(CFLAGS)
+$(OBJECTS): 
+	@echo "compiling object files"
+	@$(CC) $(SOURCES) -c $(CFLAGS)
+	@mv *.o $(OBJDIR)
 
 clean: 
 	rm -rf $(OBJDIR) 
