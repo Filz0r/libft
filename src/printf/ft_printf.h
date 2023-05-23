@@ -6,21 +6,19 @@
 /*   By: fparreir <fparreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:08:38 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/18 12:20:06 by fparreir         ###   ########.fr       */
+/*   Updated: 2023/05/23 12:35:04 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdio.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdlib.h>
-# include <limits.h> 
 
 # define HEX_LOWER "0123456789abcdef" 
 # define HEX_UPPER "0123456789ABCDEF" 
+
+# include "../../includes/libft.h"
+
 
 int		ft_printf(const char *buffer, ...);
 int		ft_type_parser(const char *buffer, va_list(args));
