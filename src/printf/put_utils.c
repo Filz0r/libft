@@ -6,11 +6,11 @@
 /*   By: fparreir <fparreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:29:16 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/18 12:20:33 by fparreir         ###   ########.fr       */
+/*   Updated: 2023/05/23 12:35:10 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_putstr(char *str)
 {

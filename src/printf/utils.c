@@ -6,11 +6,11 @@
 /*   By: fparreir <fparreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 17:16:34 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/18 12:18:15 by fparreir         ###   ########.fr       */
+/*   Updated: 2023/05/23 12:35:15 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_type_parser(const char *buffer, va_list(args))
 {

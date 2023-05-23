@@ -6,11 +6,11 @@
 /*   By: fparreir <fparreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:12:21 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/17 18:31:48 by fparreir         ###   ########.fr       */
+/*   Updated: 2023/05/23 12:34:55 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_printf(const char *buffer, ...)
 {
