@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef FT_MEMORY_H
 # define FT_MEMORY_H
 
@@ -23,5 +22,4 @@ void	*ft_memchr(const void *str, int c, size_t length);
 int		ft_memcmp(const void *s1, const void *s2, size_t length);
 void	*ft_calloc(size_t nmemb, size_t size);
 
-
-# endif
+#endif

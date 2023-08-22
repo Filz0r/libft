@@ -32,7 +32,7 @@ static int	ft_count_words(char const *str, char c)
 			counter++;
 		while (*str && *str != c)
 			str++;
-	}	
+	}
 	return (counter);
 }
 

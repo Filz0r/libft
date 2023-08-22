@@ -13,12 +13,10 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-
 # define HEX_LOWER "0123456789abcdef" 
 # define HEX_UPPER "0123456789ABCDEF" 
 
 # include "../../includes/libft.h"
-
 
 int		ft_printf(const char *buffer, ...);
 int		ft_type_parser(const char *buffer, va_list(args));

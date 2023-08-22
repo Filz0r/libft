@@ -34,7 +34,7 @@ static int	ft_check_sign(const char *str, int *pos)
 }
 
 int	ft_atoi(const char *str)
-{	
+{
 	int	sign;
 	int	i;
 	int	res;
