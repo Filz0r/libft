@@ -37,7 +37,7 @@ SRC_LISTS = $(LISTS)ft_lstadd_back.c $(LISTS)ft_lstadd_front.c $(LISTS)ft_lstcle
 		$(LISTS)ft_lstmap.c $(LISTS)ft_lstnew.c $(LISTS)ft_lstsize.c 
 SRC_MEM = $(MEM)ft_memchr.c $(MEM)ft_memcmp.c $(MEM)ft_memcpy.c $(MEM)ft_calloc.c \
 	  $(MEM)ft_memmove.c $(MEM)ft_memset.c 
-SRC_NUM = $(NUM)ft_atoi.c $(NUM)ft_itoa.c
+SRC_NUM = $(NUM)ft_atoi.c $(NUM)ft_itoa.c $(NUM)ft_atol.c
 SRC_STR = $(STR)ft_bzero.c $(STR)ft_split.c $(STR)ft_strchr.c $(STR)ft_strdup.c \
 	  $(STR)ft_striteri.c $(STR)ft_strjoin.c $(STR)ft_strlcat.c $(STR)ft_strlcpy.c \
 	  $(STR)ft_strlen.c $(STR)ft_strmapi.c $(STR)ft_strncmp.c $(STR)ft_strnstr.c \
@@ -59,12 +59,12 @@ OBJECTS = $(subst $(CHAR),$(OBJDIR),$(SRC_CHAR:.c=.o)) \
 all: $(NAME)
 
 $(NAME): $(OBJDIR) $(OBJECTS) 
-	@echo "Linking Objects into Library" 
+	@echo "Compiling Libft"
 	@ar rcs $(NAME) $(OBJECTS)
 	@echo "Done!" 
 
 $(OBJDIR):
-	mkdir $(OBJDIR)
+	@mkdir $(OBJDIR)
 
 $(OBJECTS): 
 	@echo "compiling object files"
@@ -72,14 +72,12 @@ $(OBJECTS):
 	@mv *.o $(OBJDIR)
 
 clean: 
-	rm -rf $(OBJDIR) 
+	@rm -rf $(OBJDIR)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
-bclean:
-	rm -f $(OBJDIR)*.o
 
 re: fclean all
 
-.PHONY: all clean fclean re bclean 
+.PHONY: all clean fclean re
