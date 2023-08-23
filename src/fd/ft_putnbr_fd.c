@@ -6,7 +6,7 @@
 /*   By: fparreir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 12:15:20 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/13 23:19:07 by fparreir         ###   ########.fr       */
+/*   Updated: 2023/08/23 13:54:57 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int nb, int fd)
 {
-	if (nb == MIN_INT)
+	if (nb == INT_MIN)
 	{
 		ft_putchar_fd('-', fd);
 		ft_putchar_fd('2', fd);
