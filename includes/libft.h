@@ -21,11 +21,6 @@
 # include <stdlib.h>
 # include <limits.h> 
 
-# define MIN_INT -2147483648 
-# define MAX_INT 2147483647 
-# define TRUE 1
-# define FALSE 0
-
 # include "../src/char/ft_char.h" 
 # include "../src/fd/ft_fd.h" 
 # include "../src/lists/ft_lists.h" 
