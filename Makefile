@@ -66,6 +66,9 @@ $(OBJDIR)%.o: $(SRC)%.c
 clean:
 	@rm -rf $(OBJDIR)
 
+debug: $(CFLAGS) = $(DFLAGS)
+debug: fclean $(NAME)
+
 fclean: clean
 	@rm -f $(NAME)
 
