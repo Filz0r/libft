@@ -6,7 +6,7 @@
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:12:19 by fparreir          #+#    #+#             */
-/*   Updated: 2023/11/18 12:54:11 by fparreir         ###   ########.fr       */
+/*   Updated: 2023/11/26 18:50:51 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ void	*ft_memmove(void *dest, const void *src, size_t length);
 void	*ft_memchr(const void *str, int c, size_t length);
 int		ft_memcmp(const void *s1, const void *s2, size_t length);
 void	*ft_calloc(size_t nmemb, size_t size);
-void    *ft_realloc(void *ptr, size_t size);
+void	*ft_realloc(void *ptr, size_t size);
 
 #endif
