@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t length)
 	destiny = (unsigned char *)dest;
 	if (!dest && !src)
 		return (dest);
-	while (length--)
+	while (source && *source && length--)
 		*destiny++ = *source++;
 	return (dest);
 }
