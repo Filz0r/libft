@@ -9,6 +9,8 @@ The structure will follow something like this:
 └── src
     ├── char <- functions that handle individual chars
     ├── fd <- functions that interact with file descriptors (gnl/printf not included)
+    ├── gnl <- includes the get_next_line project
+    ├── printf <- includes the printf project
     ├── lists <- funtions that handle lists (the bonus part of libft)
     ├── memory <- functions that create/manipulate memory
     ├── numbers <- functions that interact with int/long/float and math
@@ -17,4 +19,4 @@ The structure will follow something like this:
 and when you run `make all` make will build all the .o files into the **build** directory and after that link them all into the libft.a at the root of the repository.
 As my libft grows new folders might be created for other functions I create as time goes by. While attending 42 this repo will always be Norm compliant, as it will be what I use to build my projects. 
 Please try to not just copy and paste my code but try to understand how it works, and as usal keep on swimming! 
-**NOTE:** At this initial stage I'm still not sure if my implementation of my Makefile is complient with the Norm, but to my understanding of it, it should be.
+~~**NOTE:** At this initial stage I'm still not sure if my implementation of my Makefile is complient with the Norm, but to my understanding of it, it should be.~~

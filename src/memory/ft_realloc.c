@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/16 14:01:58 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/13 14:30:22 by fparreir         ###   ########.fr       */
+/*   Created: 2023/11/18 13:01:32 by fparreir          #+#    #+#             */
+/*   Updated: 2023/11/26 18:50:36 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "ft_memory.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t length)
+void	*ft_realloc(void *ptr, size_t size)
 {
-	unsigned char	*destiny;
-	unsigned char	*source;
+	void	*result;
 
-	source = (unsigned char *)src;
-	destiny = (unsigned char *)dest;
-	if (!dest && !src)
-		return (dest);
-	while (source && *source && length--)
-		*destiny++ = *source++;
-	return (dest);
+	if (ptr == NULL)
+		return (malloc(size));
+	if (!size)
+		return (ptr);
+	result = malloc(size);
+	ft_memcpy(result, ptr, size);
+	free(ptr);
+	return (result);
 }
