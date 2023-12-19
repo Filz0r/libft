@@ -43,7 +43,8 @@ SRC_STR = $(STR)ft_bzero.c $(STR)ft_split.c $(STR)ft_strchr.c \
 			$(STR)ft_strdup.c $(STR)ft_striteri.c $(STR)ft_strjoin.c \
 			$(STR)ft_strlcat.c $(STR)ft_strlcpy.c $(STR)ft_strlen.c  \
 			$(STR)ft_strmapi.c $(STR)ft_strncmp.c $(STR)ft_strnstr.c \
-          $(STR)ft_strrchr.c $(STR)ft_strtrim.c $(STR)ft_substr.c
+          $(STR)ft_strrchr.c $(STR)ft_strtrim.c $(STR)ft_substr.c \
+          $(STR)ft_strclean.c
 SRC_PRINTF = $(PRINTF)ft_printf.c $(PRINTF)put_utils.c $(PRINTF)utils.c
 SRC_GNL = $(GNL)get_next_line.c $(GNL)get_next_line_utils.c
 

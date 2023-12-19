@@ -6,7 +6,7 @@
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:50:56 by fparreir          #+#    #+#             */
-/*   Updated: 2023/12/19 10:50:56 by fparreir         ###   ########.fr       */
+/*   Updated: 2023/12/19 10:53:44 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_strclean(char *src, char c, size_t size)
 	char	*res;
 	int		new_size;
 
+	if (!src)
+		return (NULL);
 	new_size = size - count_garbage(src, c);
 	if (new_size <= 0)
 		return (NULL);
@@ -41,5 +43,6 @@ char	*ft_strclean(char *src, char c, size_t size)
 		src++;
 	}
 	res[new_size] = '\0';
+	free(src);
 	return (res);
 }
