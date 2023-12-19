@@ -6,7 +6,7 @@
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 21:07:04 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/13 14:34:40 by fparreir         ###   ########.fr       */
+/*   Updated: 2023/12/19 10:44:45 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
-	while (*str++)
+	while (str && *str++)
 		i++;
 	return (i);
 }
