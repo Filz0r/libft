@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   printf_utils.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fparreir <fparreir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 12:08:38 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/23 12:35:04 by fparreir         ###   ########.fr       */
+/*   Created: 2024/03/05 14:52:03 by fparreir          #+#    #+#             */
+/*   Updated: 2024/03/05 14:55:48 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef PRINTF_UTILS_H
+# define PRINTF_UTILS_H
 
-# define HEX_LOWER "0123456789abcdef" 
-# define HEX_UPPER "0123456789ABCDEF" 
+# include <stdarg.h>
+# include <unistd.h>
 
-# include "../../includes/libft.h"
+# define HEX_LOWER "0123456789abcdef"
+# define HEX_UPPER "0123456789ABCDEF"
 
-int		ft_printf(const char *buffer, ...);
 int		ft_type_parser(const char *buffer, va_list(args));
 int		ft_handle_pointer(int hex, unsigned long int nb);
 int		ft_putstr(char *str);
@@ -27,4 +27,4 @@ int		ft_putnbr(int c);
 int		ft_putu(unsigned int nb);
 int		ft_puthex(int hex, unsigned long int nb);
 
-#endif
+#endif //PRINTF_UTILS_H

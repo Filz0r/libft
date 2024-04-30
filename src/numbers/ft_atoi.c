@@ -6,12 +6,18 @@
 /*   By: fparreir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:56:45 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/13 14:31:51 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:25:23 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include <ft_numbers.h>
 
+/**
+ * @brief determines if the value is positive or negative
+ * @param str source string
+ * @param pos pointer to the starting position
+ * @return -1 if sign is '-' 1 if sign is '+' otherwise returns 0
+ */
 static int	ft_check_sign(const char *str, int *pos)
 {
 	int	sign;
@@ -33,6 +39,14 @@ static int	ft_check_sign(const char *str, int *pos)
 	return (sign);
 }
 
+/**
+ * @brief converts the given char * into an int
+ * @param str string we want to convert
+ * @return returns 0 if you try to break it, otherwise it returns an int with
+ * the passed value.
+ *
+ * NOTE: THIS FUNCTION DOES NOT WORK LIKE THE STANDARD LIB ATOI
+ */
 int	ft_atoi(const char *str)
 {
 	int	sign;

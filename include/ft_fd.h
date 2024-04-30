@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_char.h                                          :+:      :+:    :+:   */
+/*   ft_fd.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 15:40:48 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/15 16:09:23 by fparreir         ###   ########.fr       */
+/*   Created: 2023/05/15 16:09:27 by fparreir          #+#    #+#             */
+/*   Updated: 2024/03/05 16:29:58 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CHAR_H
-# define FT_CHAR_H
+#ifndef FT_FD_H
+# define FT_FD_H
 
-# include "../../includes/libft.h"
+# include <unistd.h>
+# include <limits.h>
 
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isprint(int c);
-int		ft_isascii(int c);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *str, int fd);
+void	ft_putendl_fd(char *str, int fd);
+void	ft_putnbr_fd(int nb, int fd);
 
-#endif 
+#endif

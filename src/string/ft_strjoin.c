@@ -6,12 +6,19 @@
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:01:15 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/13 14:34:01 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/03/05 15:23:54 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include <ft_string.h>
 
+/**
+ * @brief Joins two strings together
+ * @param s1 source string
+ * @param s2 second source string
+ * @return null if malloc fails otherwise returns a pointer to an string
+ * containing the contents of both s1 and s2.
+ */
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*buffer;

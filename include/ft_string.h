@@ -6,17 +6,18 @@
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:16:08 by fparreir          #+#    #+#             */
-/*   Updated: 2023/12/19 10:50:56 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/03/05 15:18:52 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_STRING_H
 # define FT_STRING_H
 
-# include "../../includes/libft.h"
+# include <stdlib.h>
+# include <stddef.h>
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-void	ft_bzero(void *str, size_t n);
+void	ft_free_split(char **arr);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);

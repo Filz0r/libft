@@ -6,11 +6,11 @@
 /*   By: fparreir <fparreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 18:04:03 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/23 12:36:10 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/03/05 14:51:11 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include <gnl_utils.h>
 
 int	ft_strlenc(char *str)
 {
@@ -37,7 +37,7 @@ char	*ft_strjoinc(char *s1, char *s2)
 	}
 	if (!s2)
 		return (NULL);
-	buffer = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	buffer = (char *)malloc((ft_strlenc(s1) + ft_strlenc(s2) + 1) * sizeof(char));
 	if (!buffer)
 		return (0);
 	while (s1[i] != '\0')
@@ -57,7 +57,7 @@ char	*ft_strchrc(char *str, char c)
 	if (!str)
 		return (NULL);
 	if (c == '\0')
-		return (&str[ft_strlen(str)]);
+		return (&str[ft_strlenc(str)]);
 	while (*str && *str != c)
 		str++;
 	if (*str == c)

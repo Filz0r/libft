@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include <ft_string.h>
+
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {

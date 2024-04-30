@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fsplit.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 16:18:28 by fparreir          #+#    #+#             */
-/*   Updated: 2023/12/19 10:44:34 by fparreir         ###   ########.fr       */
+/*   Created: 2023/04/13 21:35:10 by fparreir          #+#    #+#             */
+/*   Updated: 2024/03/11 15:45:19 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_memory.h"
+#include <ft_memory.h>
 
-void	ft_fsplit(char **arr)
+/**
+ * @brief null terminates the given void  * until length is 0 or we reach
+ * the end of the contents of the pointer.
+ * @param str source pointer
+ * @param length length of the pointer;
+ */
+void	ft_bzero(void	*str, size_t length)
 {
-	int	i;
+	unsigned char	*string;
+	size_t 			i;
 
 	i = 0;
-	if (!arr)
-		return ;
-	while (arr[i] != 0)
-		free(arr[i++]);
-	free(arr);
+	string = (unsigned char *)str;
+	while (string && i++ < length)
+		*string++ = '\0';
 }

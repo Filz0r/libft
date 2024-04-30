@@ -14,57 +14,66 @@ NAME = libft.a
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
-OBJDIR = build/
-INCDIR = includes/
-SRC = src/
-CHAR = $(SRC)char/
-FD = $(SRC)fd/
-LISTS = $(SRC)lists/
-MEM = $(SRC)memory/
-NUM = $(SRC)numbers/
-STR = $(SRC)string/
-PRINTF = $(SRC)printf/
-GNL = $(SRC)gnl/
+OBJDIR = build
+INCLUDES = include
+SRC = src
 
-SRC_CHAR = $(CHAR)ft_isalnum.c $(CHAR)ft_isalpha.c $(CHAR)ft_isascii.c \
-		   $(CHAR)ft_isdigit.c $(CHAR)ft_isprint.c $(CHAR)ft_toupper.c  \
-		   $(CHAR)ft_tolower.c
-SRC_FD = $(FD)ft_putchar_fd.c $(FD)ft_putstr_fd.c $(FD)ft_putnbr_fd.c \
-			$(FD)ft_putendl_fd.c
-SRC_LISTS = $(LISTS)ft_lstadd_back.c $(LISTS)ft_lstadd_front.c \
-			$(LISTS)ft_lstclear.c $(LISTS)ft_lstdelone.c \
-			$(LISTS)ft_lstlast.c $(LISTS)ft_lstmap.c $(LISTS)ft_lstnew.c \
-			$(LISTS)ft_lstsize.c $(LISTS)ft_lstget.c $(LISTS)ft_lstiter.c
-SRC_MEM = $(MEM)ft_memchr.c $(MEM)ft_memcmp.c $(MEM)ft_memcpy.c \
-			$(MEM)ft_calloc.c $(MEM)ft_memmove.c $(MEM)ft_memset.c \
-			$(MEM)ft_realloc.c $(MEM)ft_fsplit.c
-SRC_NUM = $(NUM)ft_atoi.c $(NUM)ft_itoa.c $(NUM)ft_atol.c
-SRC_STR = $(STR)ft_bzero.c $(STR)ft_split.c $(STR)ft_strchr.c \
-			$(STR)ft_strdup.c $(STR)ft_striteri.c $(STR)ft_strjoin.c \
-			$(STR)ft_strlcat.c $(STR)ft_strlcpy.c $(STR)ft_strlen.c  \
-			$(STR)ft_strmapi.c $(STR)ft_strncmp.c $(STR)ft_strnstr.c \
-          $(STR)ft_strrchr.c $(STR)ft_strtrim.c $(STR)ft_substr.c \
-          $(STR)ft_strclean.c
-SRC_PRINTF = $(PRINTF)ft_printf.c $(PRINTF)put_utils.c $(PRINTF)utils.c
-SRC_GNL = $(GNL)get_next_line.c $(GNL)get_next_line_utils.c
+SRC_CHAR = char/ft_isalnum.c char/ft_isalpha.c char/ft_isascii.c \
+		   char/ft_isdigit.c char/ft_isprint.c char/ft_toupper.c  \
+		   char/ft_tolower.c char/ft_iswhitespace.c
+SRC_FD = print/ft_putchar_fd.c print/ft_putstr_fd.c print/ft_putnbr_fd.c \
+			print/ft_putendl_fd.c
+SRC_LISTS = lists/ft_lstadd_back.c lists/ft_lstadd_front.c \
+			lists/ft_lstclear.c lists/ft_lstdelone.c \
+			lists/ft_lstlast.c lists/ft_lstmap.c lists/ft_lstnew.c \
+			lists/ft_lstsize.c lists/ft_lstget.c lists/ft_lstiter.c
+SRC_MEM = memory/ft_memchr.c memory/ft_memcmp.c memory/ft_memcpy.c \
+			memory/ft_calloc.c memory/ft_memmove.c memory/ft_memset.c \
+			memory/ft_realloc.c memory/ft_bzero.c
+SRC_NUM = numbers/ft_atoi.c numbers/ft_itoa.c numbers/ft_atol.c
+SRC_STR = string/ft_free_split.c string/ft_split.c string/ft_strchr.c \
+			string/ft_strdup.c string/ft_striteri.c string/ft_strjoin.c \
+			string/ft_strlcat.c string/ft_strlcpy.c string/ft_strlen.c  \
+			string/ft_strmapi.c string/ft_strncmp.c string/ft_strnstr.c \
+          string/ft_strrchr.c string/ft_strtrim.c string/ft_substr.c \
+          string/ft_strclean.c
+SRC_PRINTF = printf/ft_printf.c printf/put_utils.c printf/utils.c
+SRC_GNL = gnl/get_next_line.c gnl/get_next_line_utils.c gnl/gnl_utils.c
 
-SOURCES = $(SRC_CHAR) $(SRC_FD) $(SRC_LISTS) $(SRC_MEM) $(SRC_NUM) $(SRC_STR) \
-          $(SRC_PRINTF) $(SRC_GNL)
-OBJECTS = $(patsubst $(SRC)%.c,$(OBJDIR)%.o,$(SOURCES))
+SOURCES =	$(addprefix $(SRC)/, $(SRC_GNL)) \
+         	$(addprefix $(SRC)/, $(SRC_PRINTF)) \
+			$(addprefix $(SRC)/, $(SRC_STR)) \
+			$(addprefix $(SRC)/, $(SRC_CHAR)) \
+			$(addprefix $(SRC)/, $(SRC_LISTS)) \
+			$(addprefix $(SRC)/, $(SRC_MEM)) \
+			$(addprefix $(SRC)/, $(SRC_NUM)) \
+			$(addprefix $(SRC)/, $(SRC_FD)) \
+
+
+OBJECTS =	$(addprefix $(OBJDIR)/, $(SRC_GNL:.c=.o)) \
+			$(addprefix $(OBJDIR)/, $(SRC_PRINTF:.c=.o)) \
+			$(addprefix $(OBJDIR)/, $(SRC_STR:.c=.o)) \
+			$(addprefix $(OBJDIR)/, $(SRC_CHAR:.c=.o)) \
+			$(addprefix $(OBJDIR)/, $(SRC_LISTS:.c=.o)) \
+			$(addprefix $(OBJDIR)/, $(SRC_MEM:.c=.o)) \
+			$(addprefix $(OBJDIR)/, $(SRC_NUM:.c=.o)) \
+			$(addprefix $(OBJDIR)/, $(SRC_FD:.c=.o)) \
+
 
 all: $(NAME)
 
-$(NAME): $(OBJDIR) $(OBJECTS)
-	@echo "Compiling Libft"
+$(NAME): $(OBJECTS)
+	@echo "Linking Libft"
 	@ar rcs $(NAME) $(OBJECTS)
 	@echo "Done!"
 
 $(OBJDIR):
-	@mkdir -p $(dir $(OBJECTS))
+	@mkdir -p $(OBJDIR)
 
-$(OBJDIR)%.o: $(SRC)%.c
+$(OBJDIR)/%.o: $(SRC)/%.c
+	@mkdir -p $(@D)
 	@echo "Compiling $<"
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@ -I$(INCLUDES)
 
 clean:
 	@rm -rf $(OBJDIR)

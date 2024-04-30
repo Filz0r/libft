@@ -6,14 +6,14 @@
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 16:10:36 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/15 16:13:03 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:14:43 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LISTS_H
 # define FT_LISTS_H
 
-# include "../../includes/libft.h"
+# include <stdlib.h>
 
 typedef struct s_list
 {

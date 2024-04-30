@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_char.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fparreir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 12:03:28 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/13 23:19:40 by fparreir         ###   ########.fr       */
+/*   Created: 2023/05/15 15:40:48 by fparreir          #+#    #+#             */
+/*   Updated: 2024/03/05 16:11:27 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#ifndef FT_CHAR_H
+# define FT_CHAR_H
 
-void	ft_putstr_fd(char *str, int fd)
-{
-	size_t	length;
+int		ft_isalnum(int c);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isprint(int c);
+int		ft_isascii(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
+int		ft_iswhitespace(int c);
 
-	length = ft_strlen((const char *)str);
-	write(fd, str, (int)length);
-}
+#endif 

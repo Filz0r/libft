@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fd.h                                            :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: fparreir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 16:09:27 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/15 16:10:09 by fparreir         ###   ########.fr       */
+/*   Created: 2023/04/17 12:03:28 by fparreir          #+#    #+#             */
+/*   Updated: 2024/03/05 16:30:39 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_FD_H
-# define FT_FD_H
+#include <ft_fd.h>
+#include <ft_string.h>
 
-# include "../../includes/libft.h"
+void	ft_putstr_fd(char *str, int fd)
+{
+	size_t	length;
 
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *str, int fd);
-void	ft_putendl_fd(char *str, int fd);
-void	ft_putnbr_fd(int nb, int fd);
-
-#endif
+	length = ft_strlen((const char *)str);
+	write(fd, str, (int)length);
+}

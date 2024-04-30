@@ -6,11 +6,11 @@
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 14:01:58 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/13 14:30:22 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:23:19 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include <ft_memory.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t length)
 {

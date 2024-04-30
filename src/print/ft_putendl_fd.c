@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numbers.h                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: fparreir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 16:14:23 by fparreir          #+#    #+#             */
-/*   Updated: 2023/08/23 13:53:21 by fparreir         ###   ########.fr       */
+/*   Created: 2023/04/17 12:12:31 by fparreir          #+#    #+#             */
+/*   Updated: 2023/05/13 14:26:39 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_NUMBERS_H
-# define FT_NUMBERS_H
+#include <ft_fd.h>
 
-# include "../../includes/libft.h"
-
-char		*ft_itoa(int n);
-int			ft_atoi(const char *str);
-long int	ft_atol(const char *str);
-
-#endif
+void	ft_putendl_fd(char *str, int fd)
+{
+	ft_putstr_fd(str, fd);
+	ft_putchar_fd('\n', fd);
+}

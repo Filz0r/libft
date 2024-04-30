@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fparreir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fparreir <fparreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 11:58:36 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/13 23:18:32 by fparreir         ###   ########.fr       */
+/*   Created: 2023/04/24 16:34:23 by fparreir          #+#    #+#             */
+/*   Updated: 2023/05/23 12:34:52 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
+
+char	*get_next_line(int fd);
+
+#endif
