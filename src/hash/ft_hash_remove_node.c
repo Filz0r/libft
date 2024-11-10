@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 
 #include <ft_hash.h>
-#include <ft_hash_utils.h>
+#include <ft_hash_private.h>
+
 
 static int	remove_node(t_hash *table, t_hash_node *node)
 {

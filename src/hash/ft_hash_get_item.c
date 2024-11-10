@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <ft_hash.h>
-#include <ft_hash_utils.h>
+#include <ft_hash_private.h>
 
 void	*ft_hash_get_item(t_hash *table, const char *key)
 {

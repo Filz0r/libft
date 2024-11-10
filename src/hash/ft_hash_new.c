@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <ft_hash.h>
-#include <ft_hash_utils.h>
+#include <ft_hash_private.h>
 
 /**
  * @brief This function sets the default builtin functions for the hash table.

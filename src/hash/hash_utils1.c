@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_hash_utils.h>
+#include <ft_hash_private.h>
 
 // explanation on this algorithm:
 // https://theartincode.stanis.me/008-djb2/

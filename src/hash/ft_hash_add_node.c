@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <ft_hash.h>
-#include <ft_hash_utils.h>
+#include <ft_hash_private.h>
 
 /**
  * @brief This function updates the value of a node if it already exists.
