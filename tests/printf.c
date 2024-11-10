@@ -18,6 +18,7 @@
 #include <string.h>
 #include "../include/libft.h"
 
+// TODO: Finish writing tests
 static void null_test_success(void **state) {
 	(void) state;
 }
