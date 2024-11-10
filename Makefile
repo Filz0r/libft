@@ -1,22 +1,16 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: fparreir <fparreir@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/04/12 15:45:36 by fparreir          #+#    #+#              #
-#    Updated: 2023/05/23 12:33:42 by fparreir         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = libft.a
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 OBJDIR = build
 INCLUDES = include
+INCLUDES_FLAGS = -I$(INCLUDES) -I/usr/include
 SRC = src
+
+# Tests
+TEST_SRC = tests
+TEST_OBJDIR = $(OBJDIR)/tests
+TEST_FLAGS = -L. -lft -lcmocka -lbsd
 
 SRC_CHAR = char/ft_isalnum.c char/ft_isalpha.c char/ft_isascii.c \
 		   char/ft_isdigit.c char/ft_isprint.c char/ft_toupper.c  \
@@ -39,6 +33,10 @@ SRC_STR = string/ft_free_split.c string/ft_split.c string/ft_strchr.c \
           string/ft_strclean.c
 SRC_PRINTF = printf/ft_printf.c printf/put_utils.c printf/utils.c
 SRC_GNL = gnl/get_next_line.c gnl/get_next_line_utils.c gnl/gnl_utils.c
+SRC_HASH = hash/ft_hash_add_node.c hash/ft_hash_create_node.c \
+			hash/ft_hash_delete.c hash/ft_hash_get_item.c \
+			hash/ft_hash_get_node.c hash/ft_hash_new.c hash/ft_hash_print.c \
+			hash/ft_hash_remove_node.c hash/hash_utils1.c
 
 SOURCES =	$(addprefix $(SRC)/, $(SRC_GNL)) \
          	$(addprefix $(SRC)/, $(SRC_PRINTF)) \
@@ -48,6 +46,7 @@ SOURCES =	$(addprefix $(SRC)/, $(SRC_GNL)) \
 			$(addprefix $(SRC)/, $(SRC_MEM)) \
 			$(addprefix $(SRC)/, $(SRC_NUM)) \
 			$(addprefix $(SRC)/, $(SRC_FD)) \
+			$(addprefix $(SRC)/, $(SRC_HASH)) \
 
 
 OBJECTS =	$(addprefix $(OBJDIR)/, $(SRC_GNL:.c=.o)) \
@@ -58,7 +57,13 @@ OBJECTS =	$(addprefix $(OBJDIR)/, $(SRC_GNL:.c=.o)) \
 			$(addprefix $(OBJDIR)/, $(SRC_MEM:.c=.o)) \
 			$(addprefix $(OBJDIR)/, $(SRC_NUM:.c=.o)) \
 			$(addprefix $(OBJDIR)/, $(SRC_FD:.c=.o)) \
+			$(addprefix $(OBJDIR)/, $(SRC_HASH:.c=.o)) \
 
+
+# Test files
+TEST_FILES = fd.c memory.c strings.c # gnl.c lists.c numbers.c printf.c
+TEST_OBJECTS = $(addprefix $(TEST_OBJDIR)/, $(TEST_FILES:.c=.o))
+TEST_EXECUTABLES = $(addprefix $(TEST_OBJDIR)/, $(TEST_FILES:.c=.test))
 
 all: $(NAME)
 
@@ -73,7 +78,7 @@ $(OBJDIR):
 $(OBJDIR)/%.o: $(SRC)/%.c
 	@mkdir -p $(@D)
 	@echo "Compiling $<"
-	@$(CC) $(CFLAGS) -c $< -o $@ -I$(INCLUDES)
+	@$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDES_FLAGS)
 
 clean:
 	@rm -rf $(OBJDIR)
@@ -86,4 +91,32 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+# Compile individual test files
+$(TEST_OBJDIR)/%.o: $(TEST_SRC)/%.c | $(TEST_OBJDIR)
+	@mkdir -p $(@D)
+	@echo "Compiling test: $<"
+	@$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDES_FLAGS)
+
+# Create test executables
+$(TEST_OBJDIR)/%.test: $(TEST_OBJDIR)/%.o $(NAME)
+	@echo "Linking test: $@"
+	@$(CC) $< -o $@ $(TEST_FLAGS) $(INCLUDES_FLAGS)
+
+# Individual test targets
+test_%: $(NAME) $(TEST_OBJDIR)/%.test
+	@echo "Running test: $@"
+	@./$(TEST_OBJDIR)/$*.test
+
+# Directory creation
+$(TEST_OBJDIR):
+	@mkdir -p $(TEST_OBJDIR)
+
+# Run all tests
+test: $(TEST_EXECUTABLES)
+	@echo "Running all tests..."
+	@for test in $(TEST_EXECUTABLES); do \
+		echo "Executing $$test:"; \
+		./$$test; \
+	done
+
+.PHONY: all clean fclean re test debug #$(addprefix test_,$(basename $(TEST_FILES)))
