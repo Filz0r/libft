@@ -1,5 +1,7 @@
 build/
 libft.a
+libft.so
 Session.vim
 .idea/
 test*.txt
+compile_commands.json
