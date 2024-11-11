@@ -6,11 +6,11 @@
 /*   By: fparreir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:56:45 by fparreir          #+#    #+#             */
-/*   Updated: 2023/08/23 13:54:23 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:25:36 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include <ft_numbers.h>
 
 static int	ft_check_sign(const char *str, int *pos)
 {

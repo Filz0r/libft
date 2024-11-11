@@ -6,12 +6,18 @@
 /*   By: fparreir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 11:29:03 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/13 14:33:38 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/03/05 15:23:40 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include <ft_string.h>
 
+/**
+ * @brief duplicates the given string
+ * @param str source string
+ * @return returns NULL if malloc fails otherwise returns a allocated pointer
+ * to a null terminated copy of its parameter.
+ */
 char	*ft_strdup(const char *str)
 {
 	char	*buffer;

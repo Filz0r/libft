@@ -6,11 +6,11 @@
 /*   By: fparreir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 16:57:02 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/13 14:34:58 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/03/05 15:24:29 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include <ft_string.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

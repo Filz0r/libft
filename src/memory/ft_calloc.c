@@ -6,11 +6,11 @@
 /*   By: fparreir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 11:20:32 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/13 14:29:51 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:22:40 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include <ft_memory.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

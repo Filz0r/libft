@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_memory.h"
+#include <ft_memory.h>
 
 void	*ft_realloc(void *ptr, size_t size)
 {

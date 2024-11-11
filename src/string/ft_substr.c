@@ -6,11 +6,11 @@
 /*   By: fparreir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 12:30:58 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/13 14:35:33 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/03/05 15:24:48 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include <ft_string.h>
 
 static void	*ft_ret_empty_str(void)
 {

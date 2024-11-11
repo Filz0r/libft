@@ -6,11 +6,11 @@
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 19:47:59 by fparreir          #+#    #+#             */
-/*   Updated: 2023/05/13 14:28:56 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:16:51 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+# include <ft_lists.h>
 
 int	ft_lstsize(t_list *lst)
 {

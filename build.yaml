@@ -1,0 +1,11 @@
+compilers:
+  - description: Clang
+    match-compiler-exe: "/usr/bin/cc"
+    match-language: C
+    include-dirs:
+      - /home/filipe/Code/libft/include
+      - /usr/include/
+      - /usr/include/linux
+      - /usr/lib/gcc/
+      - /opt/clion/bin/clang/linux/x64/include/
+      - /usr/include/clang/16/include
