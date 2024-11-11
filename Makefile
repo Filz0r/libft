@@ -37,6 +37,7 @@ SRC_HASH = hash/ft_hash_add_node.c hash/ft_hash_create_node.c \
 			hash/ft_hash_delete.c hash/ft_hash_get_item.c \
 			hash/ft_hash_get_node.c hash/ft_hash_new.c hash/ft_hash_print.c \
 			hash/ft_hash_remove_node.c hash/hash_utils1.c
+SRC_VECTOR = vector/ft_create_vector.c vector/ft_vector_private.c
 
 SOURCES =	$(addprefix $(SRC)/, $(SRC_GNL)) \
          	$(addprefix $(SRC)/, $(SRC_PRINTF)) \
@@ -47,6 +48,7 @@ SOURCES =	$(addprefix $(SRC)/, $(SRC_GNL)) \
 			$(addprefix $(SRC)/, $(SRC_NUM)) \
 			$(addprefix $(SRC)/, $(SRC_FD)) \
 			$(addprefix $(SRC)/, $(SRC_HASH)) \
+			$(addprefix $(SRC)/, $(SRC_VECTOR)) \
 
 
 OBJECTS =	$(addprefix $(OBJDIR)/, $(SRC_GNL:.c=.o)) \
@@ -58,6 +60,7 @@ OBJECTS =	$(addprefix $(OBJDIR)/, $(SRC_GNL:.c=.o)) \
 			$(addprefix $(OBJDIR)/, $(SRC_NUM:.c=.o)) \
 			$(addprefix $(OBJDIR)/, $(SRC_FD:.c=.o)) \
 			$(addprefix $(OBJDIR)/, $(SRC_HASH:.c=.o)) \
+			$(addprefix $(OBJDIR)/, $(SRC_VECTOR:.c=.o)) \
 
 
 # Test files
