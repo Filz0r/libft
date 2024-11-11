@@ -1,7 +1,26 @@
+_mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
+I := $(patsubst %/,%,$(dir $(_mkfile_path)))
+
+ifneq ($(words $(MAKECMDGOALS)),1)
+.DEFAULT_GOAL = all
+%:
+	@$(MAKE) $@ --no-print-directory -rRf $(firstword $(MAKEFILE_LIST))
+else
+ifndef ECHO
+T := $(shell $(MAKE) $(MAKECMDGOALS) --no-print-directory \
+      -nrRf $(firstword $(MAKEFILE_LIST)) \
+      ECHO="COUNTTHIS" | grep -c "COUNTTHIS")
+N := x
+C = $(words $N)$(eval N := x $N)
+ECHO = python $(I)/progress.py --stepno=$C --nsteps=$T
+endif
+
 NAME = libft.a
+SHARED_NAME = libft.so
+
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -fpic
 OBJDIR = build
 INCLUDES = include
 INCLUDES_FLAGS = -I$(INCLUDES) -I/usr/include
@@ -68,19 +87,24 @@ TEST_FILES = fd.c memory.c strings.c # gnl.c lists.c numbers.c printf.c
 TEST_OBJECTS = $(addprefix $(TEST_OBJDIR)/, $(TEST_FILES:.c=.o))
 TEST_EXECUTABLES = $(addprefix $(TEST_OBJDIR)/, $(TEST_FILES:.c=.test))
 
-all: $(NAME)
+all: $(NAME) $(SHARED_NAME)
 
 $(NAME): $(OBJECTS)
-	@echo "Linking Libft"
+	@$(ECHO) "Linking Libft"
 	@ar rcs $(NAME) $(OBJECTS)
-	@echo "Done!"
+	@$(ECHO) "Done!"
+
+$(SHARED_NAME): $(OBJECTS)
+	@$(ECHO) "Creating shared library"
+	@$(CC) -shared -o $(SHARED_NAME) $(OBJECTS)
+	@$(ECHO) "Done!"
 
 $(OBJDIR):
 	@mkdir -p $(OBJDIR)
 
 $(OBJDIR)/%.o: $(SRC)/%.c
 	@mkdir -p $(@D)
-	@echo "Compiling $<"
+	@$(ECHO) "$@"
 	@$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDES_FLAGS)
 
 clean:
@@ -90,7 +114,7 @@ debug: CFLAGS += -g3
 debug: fclean $(NAME)
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(SHARED_NAME)
 
 re: fclean all
 
@@ -123,3 +147,4 @@ test: $(TEST_EXECUTABLES)
 	done
 
 .PHONY: all clean fclean re test debug #$(addprefix test_,$(basename $(TEST_FILES)))
+endif
