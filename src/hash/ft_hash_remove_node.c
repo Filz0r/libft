@@ -6,12 +6,13 @@
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 13:47:16 by fparreir          #+#    #+#             */
-/*   Updated: 2024/02/28 17:43:09 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/11/11 14:11:52 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_hash.h>
 #include <ft_hash_private.h>
+# include <ft_string.h>
 
 
 static int	remove_node(t_hash *table, t_hash_node *node)

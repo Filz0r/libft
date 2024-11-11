@@ -6,7 +6,7 @@
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:04:35 by fparreir          #+#    #+#             */
-/*   Updated: 2024/02/23 13:58:52 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/11/11 00:54:51 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 # define WHITE		"\033[0m"
 # define MAGENTA	"\e[0;35m"
 
-# include "libft.h"
+#include <stdlib.h>
 
 /**
  * @brief This struct represents a node in the hash table.

@@ -6,7 +6,7 @@
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:40:48 by fparreir          #+#    #+#             */
-/*   Updated: 2024/01/14 18:55:10 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/11/11 00:53:08 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_HASH_UTILS_H
 
 # include "ft_hash.h"
+# include <stdlib.h>
 
 size_t		hash_djb2(const unsigned char *str);
 size_t		get_index(t_hash *table, const unsigned char *key, size_t size);

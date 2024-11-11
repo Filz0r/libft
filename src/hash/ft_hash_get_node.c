@@ -6,12 +6,13 @@
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 22:14:56 by fparreir          #+#    #+#             */
-/*   Updated: 2024/01/14 14:32:41 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/11/11 14:10:50 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_hash.h>
 #include <ft_hash_private.h>
+# include <ft_string.h>
 
 /**
  * @brief This function returns the node of the hash table that matches the key.

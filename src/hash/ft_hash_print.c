@@ -6,11 +6,12 @@
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 19:59:39 by fparreir          #+#    #+#             */
-/*   Updated: 2024/01/14 16:15:20 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/11/11 14:11:28 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_hash.h>
+# include <stdio.h>
 
 static void	ft_hash_print_node(t_hash_node *node, void (*print)(void *ptr),
 		t_type type)

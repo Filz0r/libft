@@ -6,10 +6,11 @@
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:42:09 by fparreir          #+#    #+#             */
-/*   Updated: 2024/01/14 18:51:52 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/11/11 14:12:08 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include <stdlib.h>
 #include <ft_hash_private.h>
 
 // explanation on this algorithm:

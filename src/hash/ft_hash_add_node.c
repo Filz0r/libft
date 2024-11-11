@@ -6,11 +6,12 @@
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:52:29 by fparreir          #+#    #+#             */
-/*   Updated: 2024/02/25 17:34:15 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/11/11 14:09:55 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_hash.h>
+# include <ft_string.h>
 #include <ft_hash_private.h>
 
 /**

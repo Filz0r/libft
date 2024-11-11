@@ -6,12 +6,13 @@
 /*   By: fparreir <fparreir@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:38:11 by fparreir          #+#    #+#             */
-/*   Updated: 2024/02/23 13:56:55 by fparreir         ###   ########.fr       */
+/*   Updated: 2024/11/11 14:11:04 by fparreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_hash.h>
 #include <ft_hash_private.h>
+# include <ft_memory.h>
 
 /**
  * @brief This function sets the default builtin functions for the hash table.
